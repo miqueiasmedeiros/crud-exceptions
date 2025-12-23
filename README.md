@@ -87,3 +87,35 @@ cd crud-exceptions
 mvn spring-boot:run
 ```
 
+#### 📌 Exemplos de Endpoints
+
+
+| Método | Endpoint               | Descrição                  |
+| ------ |------------------------|----------------------------|
+| GET    | `/usuario/{id}`        | Busca usuário por ID       |
+| GET    | `/usuario?email=email` | Busca por email            |
+| POST   | `/usuario`             | Cria novo usuário          |
+| PUT    | `/usuario?email=email` | Atualiza usuário por email |
+| DELETE | `/usuario/{id}`        | Remove registro por ID     |
+
+A API estará disponível em http://localhost:8080
+
+### ⚠️ Exemplo de Resposta de Erro
+
+Quando um recurso não é encontrado, a API retorna um status 404 Not Found com o seguinte corpo:
+```bash
+{
+    "timestamp": "2025-12-23T06:53:15.910954748",
+    "status": 404,
+    "error": "Not Found",
+    "message": "Email não encontrado."
+}
+```
+
+### Melhorias para o projeto
+
+- **Documentação com Swagger/OpenAPI:** Configurar o Swagger UI para documentar visualmente os endpoints e facilitar os testes da API.
+
+- **Exclusão Segura (ID + E-mail):** Refatorar o método de remoção para validar tanto o ID quanto o e-mail, garantindo maior precisão na deleção.
+
+- **Validação de E-mail:** Implementar Bean Validation (@Email) para o formato e uma regra de negócio na Service para impedir e-mails duplicados.
