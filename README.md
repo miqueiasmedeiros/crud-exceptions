@@ -44,18 +44,46 @@ Além disso:
 
 O projeto segue uma arquitetura em camadas:
 
+```text
 src/
 └── main/
-├── java/
-│   └── com/
-│       └── dev/
-│           └── cadastro_usuario/
-│               ├── controller/
-│               ├── business/
-│               ├── infrastructure/
-│               │   ├── entitys/
-│               │   ├── repository/
-│               │   └── exceptions/
-│               └── CadastroUsuarioApplication.java
-└── resources/
-└── application.properties
+    ├── java/
+    │   └── com/
+    │       └── dev/
+    │           └── cadastro_usuario/
+    │               ├── controller/
+    │               ├── business/
+    │               ├── infrastructure/
+    │               │   ├── entitys/
+    │               │   ├── repository/
+    │               │   ├── exceptions/
+    │               │   └── handle/
+    │               └── CadastroUsuarioApplication.java
+    └── resources/
+        └── application.properties
+```
+
+- **Controller** → recebe as requisições HTTP
+- **Service (business)** → contém a regra de negócio
+- **Repository** → acesso ao banco de dados
+
+---
+
+## ▶️ Como Executar o Projeto
+
+#### 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/miqueiasmedeiros/crud-exceptions.git
+```
+#### 2️⃣ Acesse o diretório
+
+```bash
+cd crud-exceptions
+```
+#### 3️⃣ Execute a Aplicação
+
+```bash
+mvn spring-boot:run
+```
+
